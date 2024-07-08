@@ -111,4 +111,21 @@ void DAAbstractNodeFactory::workflowReady()
 {
 }
 
-}  // end DA
+
+// qHash
+#if QT_VERSION_MAJOR >= 6
+std::size_t DAWORKFLOW_API qHash(const DAAbstractNodeFactory::SharedPointer& key, std::size_t seed )
+{
+	return qHash(key->factoryPrototypes(), seed);
+}
+#else
+uint DAWORKFLOW_API qHash(const DAAbstractNodeFactory::SharedPointer& key, uint seed)
+{
+	return qHash(key->factoryPrototypes(), seed);
+}
+#endif
+
+}  
+
+
+// end DA

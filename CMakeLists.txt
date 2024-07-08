@@ -1,5 +1,5 @@
 ﻿
-# Cmake的命令不区分打下写，例如message，set等命令；但Cmake的变量区分大小写
+# Cmake的命令不区分大下写，例如message，set等命令；但Cmake的变量区分大小写
 # 为统一风格，本项目的Cmake命令全部采用小写，变量全部采用大写加下划线组合。
 # DA WorkBench 顶层Cmake文件
 # 在运行次CMakeLists.txt之前，请确保3rdparty已经运行并进行了install，3rdparty位于/src/3rdparty/CMakeLists.txt
@@ -114,6 +114,10 @@ if(MSVC)
         $<$<CONFIG:Release>:/MD>
     )
 endif()
+
+if (WIN32)
+  list(APPEND DEFAULT_DEFINES UNICODE _UNICODE _CRT_SECURE_NO_WARNINGS)
+endif()
 ########################################################
 # Qt
 ########################################################
@@ -207,12 +211,12 @@ if(WIN32)
     ADD_COMPILE_DEFINITIONS(NOMINMAX)
 endif()
 
-
+#add_subdirectory(src/3rdparty)
 ########################################################
 # 源码路径
 ########################################################
 add_subdirectory(src)
-#add_subdirectory(plugins)
+add_subdirectory(plugins)
 
 ##################################
 # 最终安装 install

@@ -35,7 +35,7 @@ void DAWorkbenchAboutDialog::makeAboutInfo()
 #if DA_ENABLE_PYTHON
     ui->textEdit->append(tr(""));
     ui->textEdit->append(tr("This is a Python dependent version"));//cn:这是依赖python的版本
-    ui->textEdit->append(tr("pybind11,BSD,Version:%1.%2.%3").arg(PYBIND11_VERSION_MAJOR).arg(PYBIND11_VERSION_MINOR).arg(PYBIND11_VERSION_PATCH));//cn:这是依赖python的版本
+    ui->textEdit->append(tr("pybind11,BSD,Version:%1.%2.%3").arg(PYBIND11_VERSION_MAJOR).arg(PYBIND11_VERSION_MINOR).arg(0));//cn:这是依赖python的版本
 #endif
 }
 }//end DA

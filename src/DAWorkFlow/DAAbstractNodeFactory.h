@@ -189,6 +189,12 @@ public:
 	virtual void workflowReady();
 };
 
+// qHash
+#if QT_VERSION_MAJOR >= 6
+std::size_t DAWORKFLOW_API qHash(const DAAbstractNodeFactory::SharedPointer& key, std::size_t seed = 0);
+#else
+uint DAWORKFLOW_API qHash(const DAAbstractNodeFactory::SharedPointer& key, uint seed = 0);
+#endif
 }  // end DA
 
 #endif  // FCABSTRACTNODEFACTORY_H

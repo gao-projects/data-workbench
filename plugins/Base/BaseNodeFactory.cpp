@@ -119,10 +119,10 @@ void BaseNodeFactory::loadExternInfoFromXml(const QDomElement* factoryExternElem
     DA::DAAbstractNodeFactory::loadExternInfoFromXml(factoryExternElement);
 }
 
-DA::DANodeGraphicsSceneEventListener* BaseNodeFactory::createNodeGraphicsSceneEventListener()
-{
-    return nullptr;
-}
+//DA::DANodeGraphicsSceneEventListener* BaseNodeFactory::createNodeGraphicsSceneEventListener()
+//{
+//    return nullptr;
+//}
 
 
 QMainWindow* BaseNodeFactory::getMainWindow() const

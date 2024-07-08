@@ -69,4 +69,5 @@ Q_DECLARE_METATYPE(DA::DANodeMetaData)
 DAWORKFLOW_API QDataStream& operator<<(QDataStream& out, const DA::DANodeMetaData& b);
 DAWORKFLOW_API QDataStream& operator>>(QDataStream& in, DA::DANodeMetaData& b);
 DAWORKFLOW_API QDebug operator<<(QDebug debug, const DA::DANodeMetaData& c);
+
 #endif  // FCNODEMETADATA_H

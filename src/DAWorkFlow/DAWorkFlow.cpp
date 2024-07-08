@@ -19,7 +19,7 @@ public:
 	void recordNode(DAAbstractNode::SharedPointer& node);
 
 public:
-	QHash< DANodeMetaData, std::shared_ptr< DAAbstractNodeFactory > > mMetaToFactory;  ///< 记录prototype对应的工厂
+	QHash< DA::DANodeMetaData, std::shared_ptr< DAAbstractNodeFactory > > mMetaToFactory;  ///< 记录prototype对应的工厂
 	QHash< QString, std::shared_ptr< DAAbstractNodeFactory > > mFactorys;              ///< 记录所有的工厂
 	QList< DAAbstractNode::SharedPointer > mNodes;                                     ///< 节点相关信息列表
 	QMap< DAAbstractNode::IdType, DAAbstractNode::SharedPointer > mIdToNode;           ///< 文本信息列表

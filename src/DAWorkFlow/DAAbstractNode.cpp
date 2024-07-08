@@ -54,9 +54,8 @@ public:
 	DAAbstractNodeGraphicsItem* mItem { nullptr };  ///< node 对应的item
 	DAAbstractNodeFactory::WeakPointer mFactory;  ///< 保存节点的工厂，工厂的设置在DAWorkFlow::createNode中
 };
-}
 
-using namespace DA;
+
 //================================================
 // DAAbstractNodePrivate::LinkData
 //================================================
@@ -979,4 +978,19 @@ void DAAbstractNode::removeOutputKey(const QString& key)
 void DAAbstractNode::registFactory(const std::shared_ptr< DAAbstractNodeFactory >& fc)
 {
     d_ptr->mFactory = fc;
+}
+
+		// qHash
+#if QT_VERSION_MAJOR >= 6
+std::size_t qHash(const DA::DAAbstractNode::SharedPointer& key, std::size_t seed )
+{
+	return qHash(key->metaData(), seed);
+}
+#else
+uint DAWORKFLOW_API qHash(const DA::DAAbstractNode::SharedPointer& key, uint seed)
+{
+	return qHash(key->metaData(), seed);
+}
+#endif
+
 }

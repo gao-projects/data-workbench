@@ -91,7 +91,7 @@ public:
     // 从xml加载扩展信息
     virtual void loadExternInfoFromXml(const QDomElement* factoryExternElement) override;
     // 创建场景事件监听器，如果需要对场景的事件进行监听，需要继承此函数并返回一个事件监听器
-    virtual DA::DANodeGraphicsSceneEventListener* createNodeGraphicsSceneEventListener() override;
+    //virtual DA::DANodeGraphicsSceneEventListener* createNodeGraphicsSceneEventListener() override;
 public:
     // 窗口相关操作
     //  获取主体窗口

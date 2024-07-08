@@ -54,10 +54,13 @@ class DAWORKFLOW_API DAAbstractNode : public std::enable_shared_from_this< DAAbs
 	friend class DAAbstractNodeFactory;
 	friend class DAWorkFlow;
 
+
+
 public:
 	using SharedPointer = std::shared_ptr< DAAbstractNode >;
 	using WeakPointer   = std::weak_ptr< DAAbstractNode >;
 	using IdType        = uint64_t;
+
 
 public:
 	/**
@@ -211,6 +214,13 @@ protected:
 	// 注册工作流
 	void registFactory(const std::shared_ptr< DAAbstractNodeFactory >& fc);
 };
+
+		// qHash
+#if QT_VERSION_MAJOR >= 6
+std::size_t DAWORKFLOW_API qHash(const DAAbstractNode::SharedPointer& key, std::size_t seed = 0);
+#else
+uint DAWORKFLOW_API qHash(const DAAbstractNode::SharedPointer& key, uint seed = 0);
+#endif
 
 }  // end DA
 
